@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="author" content="Amaury Henrottay" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="Hangman Game" />
+    <meta name="keywords" content="Hangman, Game" />
 
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" href="./assets/img/rocket.png" />
 
-    <title>Document</title>
+    <title>Hangman Game</title>
   </head>
   <body>
-    <script src="./assets/js/script.js"></script>
+    <div>
+      <p id="affichage">mot à devner</p>
+      <ul>
+        <li>
+          <input
+            id="guess-letter"
+            type="text"
+            placeholder="Entrez une lettre"
+          />
+        </li>
+        <li><button id="enter">Enter</button></li>
+        <li><button id="new-game">Nouvelle partie</button></li>
+      </ul>
+    </div>
+    <!-- <script src="./assets/js/dictionnaire.js"></script> -->
+    <script type="module" src="./assets/js/script.js"></script>
   </body>
 </html>
