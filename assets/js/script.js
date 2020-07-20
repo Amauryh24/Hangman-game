@@ -1,3 +1,12 @@
 import { dictionnaire } from "./dictionnaire.js";
 
-console.log(dictionnaire[0]);
+function randomWord() {
+  let wordToGuess = Math.floor(Math.random() * dictionnaire.length);
+  console.log(wordToGuess);
+  wordToGuess = dictionnaire[wordToGuess];
+  return wordToGuess;
+}
+
+window.addEventListener("load", () => {
+  console.log(randomWord());
+});
