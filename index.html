@@ -16,32 +16,25 @@
   </head>
   <body>
     <div>
-      <h2 id="affichage">mot à deviner</h2>
-      <ul>
-        <li>
-          <input
-            maxlength="1"
-            id="guess-letter"
-            type="text"
-            placeholder="Entrez une lettre"
-          />
-        </li>
-        <li>
-          <button id="enter-btn" onclick="guessLetter()">
-            Enter
-          </button>
-          <label id="enter-label" for="enter"></label>
-        </li>
-        <li>
-          <p id="memory-guess-letter"></p>
-        </li>
-        <li><button id="new-game" disabled>Nouvelle partie</button></li>
-      </ul>
+      <button id="new-game" disabled>Nouvelle partie</button>
     </div>
-
-    <button onclick="myFunction()">Click me</button>
-
-    <p id="demo"></p>
+    <div>
+      <h2 id="affichage">mot à deviner</h2>
+      <input
+        maxlength="1"
+        id="guess-letter"
+        type="text"
+        placeholder="Entrez une lettre"
+      />
+      <button id="enter-btn">
+        Enter
+      </button>
+      <label id="enter-label" for="enter"></label>
+      <p id="memory-guess-letter"></p>
+    </div>
+    <div>
+      <img id="hangman-image" src="./assets/img/Hangman-0.png" alt="" />
+    </div>
     <script type="module" src="./assets/js/script.js"></script>
   </body>
 </html>

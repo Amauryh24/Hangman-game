@@ -7,14 +7,4 @@ body {
     font-size: 1.3em;
     line-height: 1.3em;
   }
-  ul {
-    li {
-      padding: 1em;
-      input {
-        &::placeholder {
-          text-align: center;
-        }
-      }
-    }
-  }
 }
