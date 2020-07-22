@@ -75,7 +75,7 @@ body .alphabet-wrapper ul {
           justify-content: center;
 }
 
-body .alphabet-wrapper ul li {
+body .alphabet-wrapper ul .letter {
   padding: 1em;
   margin: 0.2em;
   width: 50px;
@@ -84,8 +84,11 @@ body .alphabet-wrapper ul li {
   border-radius: 5px;
 }
 
-body .alphabet-wrapper ul li:hover {
-  background-color: #eab562;
+body .alphabet-wrapper ul .On:hover {
   cursor: pointer;
+}
+
+body .alphabet-wrapper ul .Off {
+  background-color: #eab562;
 }
 /*# sourceMappingURL=style.css.map */

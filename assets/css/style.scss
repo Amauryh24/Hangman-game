@@ -71,17 +71,22 @@ body {
     ul {
       display: flex;
       justify-content: center;
-      li {
+      .letter {
         padding: 1em;
         margin: 0.2em;
         width: 50px;
         background-color: #fff7ce;
         text-transform: uppercase;
         border-radius: 5px;
+      }
+      .On {
         &:hover {
-          background-color: #eab562;
+          // background-color: #eab562;
           cursor: pointer;
         }
+      }
+      .Off {
+        background-color: #eab562;
       }
     }
   }
