@@ -1,10 +1,88 @@
+@font-face {
+  font-family: "BalsamiqSansRegular";
+  src: url(../fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf);
+}
+
+input,
+button {
+  padding: 1em;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+button {
+  box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
+  &:hover {
+    cursor: pointer;
+    background-color: #eab562;
+  }
+}
 body {
   text-align: center;
   font-size: 16px;
-  h2 {
-    padding-top: 100px;
-    color: red;
-    font-size: 1.3em;
-    line-height: 1.3em;
+  line-height: 24px;
+  font-family: "BalsamiqSansRegular";
+  background-image: radial-gradient(
+    circle at top center,
+    rgb(243, 177, 46),
+    rgb(230, 153, 36),
+    rgb(217, 129, 26),
+    rgb(204, 104, 15),
+    rgb(191, 80, 5)
+  );
+  height: 100vh;
+  color: rgb(149, 56, 1);
+
+  .content-header {
+    h1 {
+      padding: 50px;
+      font-size: 3em;
+      color: rgb(149, 56, 1);
+      line-height: 1.4em;
+      width: 400px;
+      margin: auto;
+    }
+  }
+
+  .content-game {
+    width: 400px;
+    margin: auto;
+    h2 {
+      padding: 80px;
+      color: rgb(149, 56, 1);
+      font-size: 1.3em;
+    }
+    #memory-guess-letter {
+      width: 91%;
+      margin: auto;
+      padding: 1em;
+      border-radius: 5px;
+      margin-top: 8px;
+      border: 2px solid #cb650e;
+      display: none;
+    }
+  }
+  .content-image {
+    img {
+      filter: invert(1);
+    }
+  }
+  .alphabet-wrapper {
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        padding: 1em;
+        margin: 0.2em;
+        width: 50px;
+        background-color: #fff7ce;
+        text-transform: uppercase;
+        border-radius: 5px;
+        &:hover {
+          background-color: #eab562;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }

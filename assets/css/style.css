@@ -1,32 +1,91 @@
-body {
-  text-align: center;
+@font-face {
+  font-family: "BalsamiqSansRegular";
+  src: url(../fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf);
+}
+
+input,
+button {
+  padding: 1em;
+  border-radius: 5px;
+  border: none;
   font-size: 16px;
 }
 
-body h2 {
-  padding-top: 100px;
-  color: red;
+button {
+  -webkit-box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
+          box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #eab562;
+}
+
+body {
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "BalsamiqSansRegular";
+  background-image: radial-gradient(circle at top center, #f3b12e, #e69924, #d9811a, #cc680f, #bf5005);
+  height: 100vh;
+  color: #953801;
+}
+
+body .content-header h1 {
+  padding: 50px;
+  font-size: 3em;
+  color: #953801;
+  line-height: 1.4em;
+  width: 400px;
+  margin: auto;
+}
+
+body .content-game {
+  width: 400px;
+  margin: auto;
+}
+
+body .content-game h2 {
+  padding: 80px;
+  color: #953801;
   font-size: 1.3em;
-  line-height: 1.3em;
 }
 
-body ul li {
+body .content-game #memory-guess-letter {
+  width: 91%;
+  margin: auto;
   padding: 1em;
+  border-radius: 5px;
+  margin-top: 8px;
+  border: 2px solid #cb650e;
+  display: none;
 }
 
-body ul li input::-webkit-input-placeholder {
-  text-align: center;
+body .content-image img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
-body ul li input:-ms-input-placeholder {
-  text-align: center;
+body .alphabet-wrapper ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-body ul li input::-ms-input-placeholder {
-  text-align: center;
+body .alphabet-wrapper ul li {
+  padding: 1em;
+  margin: 0.2em;
+  width: 50px;
+  background-color: #fff7ce;
+  text-transform: uppercase;
+  border-radius: 5px;
 }
 
-body ul li input::placeholder {
-  text-align: center;
+body .alphabet-wrapper ul li:hover {
+  background-color: #eab562;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

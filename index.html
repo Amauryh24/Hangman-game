@@ -15,26 +15,50 @@
     <title>Hangman Game</title>
   </head>
   <body>
-    <div>
-      <button id="new-game" disabled>Nouvelle partie</button>
+    <div class="content-header">
+      <h1>Welcome to the Handman Game</h1>
+      <button id="new-game">Nouvelle partie</button>
     </div>
-    <div>
+    <div class="content-game">
       <h2 id="affichage">mot à deviner</h2>
-      <input
-        maxlength="1"
-        id="guess-letter"
-        type="text"
-        placeholder="Entrez une lettre"
-      />
-      <button id="enter-btn">
-        Enter
-      </button>
       <label id="enter-label" for="enter"></label>
-      <p id="memory-guess-letter"></p>
+      <p id="memory-guess-letter">Lettres :</p>
     </div>
-    <div>
-      <img id="hangman-image" src="./assets/img/Hangman-0.png" alt="" />
+    <div class="alphabet-wrapper">
+      <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+        <li>g</li>
+        <li>h</li>
+        <li>i</li>
+      </ul>
+      <ul>
+        <li>j</li>
+        <li>k</li>
+        <li>l</li>
+        <li>m</li>
+        <li>n</li>
+        <li>o</li>
+        <li>p</li>
+        <li>q</li>
+      </ul>
+      <ul>
+        <li>r</li>
+        <li>s</li>
+        <li>t</li>
+        <li>u</li>
+        <li>v</li>
+        <li>w</li>
+        <li>x</li>
+        <li>y</li>
+        <li>z</li>
+      </ul>
     </div>
+
     <script type="module" src="./assets/js/script.js"></script>
   </body>
 </html>
