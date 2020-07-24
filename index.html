@@ -14,7 +14,7 @@
 
     <title>Hangman Game</title>
   </head>
-  <body>
+  <body onkeydown="pressLetter(event)">
     <div class="content-header">
       <h1>Welcome to the Handman Game</h1>
       <button id="new-game">Nouvelle partie</button>
@@ -26,36 +26,36 @@
     </div>
     <div class="alphabet-wrapper">
       <ul>
-        <li class="letter On" onclick="guessLetter('a')">a</li>
-        <li class="letter On" onclick="guessLetter('b')">b</li>
-        <li class="letter On" onclick="guessLetter('c')">c</li>
-        <li class="letter On" onclick="guessLetter('d')">d</li>
-        <li class="letter On" onclick="guessLetter('e')">e</li>
-        <li class="letter On" onclick="guessLetter('f')">f</li>
-        <li class="letter On" onclick="guessLetter('g')">g</li>
-        <li class="letter On" onclick="guessLetter('h')">h</li>
-        <li class="letter On" onclick="guessLetter('i')">i</li>
+        <li id="letterA" class="letter On" onclick="clickLetter('a')">a</li>
+        <li id="letterB" class="letter On" onclick="clickLetter('b')">b</li>
+        <li id="letterC" class="letter On" onclick="clickLetter('c')">c</li>
+        <li id="letterD" class="letter On" onclick="clickLetter('d')">d</li>
+        <li id="letterE" class="letter On" onclick="clickLetter('e')">e</li>
+        <li id="letterF" class="letter On" onclick="clickLetter('f')">f</li>
+        <li id="letterG" class="letter On" onclick="clickLetter('g')">g</li>
+        <li id="letterH" class="letter On" onclick="clickLetter('h')">h</li>
+        <li id="letterI" class="letter On" onclick="clickLetter('i')">i</li>
       </ul>
       <ul>
-        <li class="letter On" onclick="guessLetter('j')">j</li>
-        <li class="letter On" onclick="guessLetter('k')">k</li>
-        <li class="letter On" onclick="guessLetter('l')">l</li>
-        <li class="letter On" onclick="guessLetter('m')">m</li>
-        <li class="letter On" onclick="guessLetter('n')">n</li>
-        <li class="letter On" onclick="guessLetter('o')">o</li>
-        <li class="letter On" onclick="guessLetter('p')">p</li>
-        <li class="letter On" onclick="guessLetter('q')">q</li>
+        <li id="letterJ" class="letter On" onclick="clickLetter('j')">j</li>
+        <li id="letterK" class="letter On" onclick="clickLetter('k')">k</li>
+        <li id="letterL" class="letter On" onclick="clickLetter('l')">l</li>
+        <li id="letterM" class="letter On" onclick="clickLetter('m')">m</li>
+        <li id="letterN" class="letter On" onclick="clickLetter('n')">n</li>
+        <li id="letterO" class="letter On" onclick="clickLetter('o')">o</li>
+        <li id="letterP" class="letter On" onclick="clickLetter('p')">p</li>
+        <li id="letterQ" class="letter On" onclick="clickLetter('q')">q</li>
       </ul>
       <ul>
-        <li class="letter On" onclick="guessLetter('r')">r</li>
-        <li class="letter On" onclick="guessLetter('s')">s</li>
-        <li class="letter On" onclick="guessLetter('t')">t</li>
-        <li class="letter On" onclick="guessLetter('u')">u</li>
-        <li class="letter On" onclick="guessLetter('v')">v</li>
-        <li class="letter On" onclick="guessLetter('w')">w</li>
-        <li class="letter On" onclick="guessLetter('x')">x</li>
-        <li class="letter On" onclick="guessLetter('y')">y</li>
-        <li class="letter On" onclick="guessLetter('z')">z</li>
+        <li id="letterR" class="letter On" onclick="clickLetter('r')">r</li>
+        <li id="letterS" class="letter On" onclick="clickLetter('s')">s</li>
+        <li id="letterT" class="letter On" onclick="clickLetter('t')">t</li>
+        <li id="letterU" class="letter On" onclick="clickLetter('u')">u</li>
+        <li id="letterV" class="letter On" onclick="clickLetter('v')">v</li>
+        <li id="letterW" class="letter On" onclick="clickLetter('w')">w</li>
+        <li id="letterX" class="letter On" onclick="clickLetter('x')">x</li>
+        <li id="letterY" class="letter On" onclick="clickLetter('y')">y</li>
+        <li id="letterZ" class="letter On" onclick="clickLetter('z')">z</li>
       </ul>
     </div>
 

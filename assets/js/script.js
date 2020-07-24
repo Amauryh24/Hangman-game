@@ -1,14 +1,25 @@
-window.guessLetter = (e) => {
-  console.log(e);
-};
-addEventListener("click", (event) => {
-  console.log(event.target);
-  event.target.setAttribute("class", "letter Off");
-});
+import { dictionnaire } from "./dictionnaire.js";
 
-addEventListener("keyup", (e) => {
-  if (e.keyCode === 65) {
-    event.preventDefault();
-    console.log(e.target);
+console.log(dictionnaire);
+let wordToGuess = [];
+let wordToDisplay = [];
+window.getRandomWord = () => {
+  Math.floor(Math.random() * dictionnaire.length);
+};
+window.pressLetter = (lettre) => {
+  displayLetterKeyboard(lettre.key);
+};
+
+window.clickLetter = (lettre) => {
+  displayLetterKeyboard(lettre);
+};
+
+window.displayLetterKeyboard = (event) => {
+  let letter = event;
+  let element = document.getElementById("letter" + letter.toUpperCase());
+  element.setAttribute("class", "letter Off");
+
+  if (element.classList.contains("Off") == true) {
+    return;
   }
-});
+};
