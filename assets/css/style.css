@@ -3,24 +3,6 @@
   src: url(../fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf);
 }
 
-input,
-button {
-  padding: 1em;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-}
-
-button {
-  -webkit-box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
-          box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: #eab562;
-}
-
 body {
   text-align: center;
   font-size: 16px;
@@ -29,6 +11,7 @@ body {
   background-image: radial-gradient(circle at top center, #f3b12e, #e69924, #d9811a, #cc680f, #bf5005);
   height: 100vh;
   color: #953801;
+  position: relative;
 }
 
 body .content-header h1 {
@@ -90,5 +73,45 @@ body .alphabet-wrapper ul .On:hover {
 
 body .alphabet-wrapper ul .Off {
   background-color: #eab562;
+}
+
+body .modal-wrapper {
+  background-color: #e79c25;
+  -webkit-box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.514);
+          box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.514);
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .modal-wrapper button {
+  width: 30%;
+  margin: 1em;
+  padding: 1em;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+body .modal-wrapper button:hover {
+  background-color: white;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
