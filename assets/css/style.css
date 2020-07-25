@@ -44,6 +44,24 @@ body .content-game #memory-guess-letter {
   display: none;
 }
 
+body .content-game progress {
+  -webkit-appearance: initial;
+     -moz-appearance: initial;
+          appearance: initial;
+  width: 100%;
+  margin: 1em 0;
+}
+
+body .content-game ::-webkit-progress-value {
+  background-color: #953801;
+}
+
+body .content-game ::-webkit-progress-bar {
+  background-color: transparent;
+  border: 2px solid;
+  border-radius: 15px;
+}
+
 body .content-image img {
   -webkit-filter: invert(1);
           filter: invert(1);

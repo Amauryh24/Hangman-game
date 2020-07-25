@@ -6,7 +6,8 @@ let memoryLetters = [];
 let wordToDisplayElement = document.getElementById("affichage");
 let memoryLettersElement = document.getElementById("memory-guess-letter");
 let gameEnd = true;
-let essais = 0;
+let essais = 7;
+let essaisElement = document.getElementById("progress");
 
 window.initGame = () => {
   let elements = document.querySelectorAll(".letter");
@@ -14,7 +15,8 @@ window.initGame = () => {
     element.setAttribute("class", "letter On");
   });
   gameEnd = false;
-  essais = 0;
+  essais = 7;
+  essaisElement.value = 7;
   wordToDisplay = [];
   memoryLetters = [];
   memoryLettersElement.style.display = "none";
@@ -85,8 +87,9 @@ window.checkLetter = (event) => {
   }
   if (wordToGuess.includes(letter) === false) {
     console.log("raté");
-    essais++;
-    if (essais === 7) {
+    essais--;
+    essaisElement.value = essais;
+    if (essais === 0) {
       document.querySelector(".modal-wrapper").style.display = "flex";
       document.getElementById("message").innerText =
         "Sorry, the word was : " + wordToGuess.join("");
