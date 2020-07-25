@@ -8,6 +8,10 @@ let memoryLettersElement = document.getElementById("memory-guess-letter");
 let gameEnd = true;
 
 window.initGame = () => {
+  let elements = document.querySelectorAll(".letter");
+  elements.forEach((element) => {
+    element.setAttribute("class", "letter On");
+  });
   gameEnd = false;
   wordToDisplay = [];
   memoryLetters = [];
@@ -82,15 +86,25 @@ window.checkLetter = (event) => {
   console.log(wordToDisplay);
   if (wordToGuess.join("") == wordToDisplay.join("")) {
     console.log("congratualtion!!");
+    document.querySelector(".modal-wrapper").style.display = "flex";
+    document.getElementById("message").innerText = "Congratulation";
     gameEnd = true;
   }
 };
 
 document.getElementById("new-game").addEventListener("click", () => {
-  let elements = document.querySelectorAll(".letter");
-  elements.forEach((element) => {
-    element.setAttribute("class", "letter On");
-  });
   initGame();
   displayWord();
+});
+
+// feature modal
+document.getElementById("yes").addEventListener("click", (e) => {
+  document.querySelector(".modal-wrapper").style.display = "none";
+
+  initGame();
+  displayWord();
+});
+
+document.getElementById("no").addEventListener("click", (e) => {
+  document.querySelector(".modal-wrapper").style.display = "none";
 });
