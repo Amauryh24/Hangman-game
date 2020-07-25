@@ -6,6 +6,7 @@ let memoryLetters = [];
 let wordToDisplayElement = document.getElementById("affichage");
 let memoryLettersElement = document.getElementById("memory-guess-letter");
 let gameEnd = true;
+let essais = 0;
 
 window.initGame = () => {
   let elements = document.querySelectorAll(".letter");
@@ -13,6 +14,7 @@ window.initGame = () => {
     element.setAttribute("class", "letter On");
   });
   gameEnd = false;
+  essais = 0;
   wordToDisplay = [];
   memoryLetters = [];
   memoryLettersElement.style.display = "none";
@@ -81,11 +83,19 @@ window.checkLetter = (event) => {
       wordToDisplayElement.innerText = wordToDisplay.join("");
     }
   }
+  if (wordToGuess.includes(letter) === false) {
+    console.log("raté");
+    essais++;
+    if (essais === 7) {
+      document.querySelector(".modal-wrapper").style.display = "flex";
+      document.getElementById("message").innerText =
+        "Sorry, the word was : " + wordToGuess.join("");
+      gameEnd = true;
+    }
+  }
+
   //congratulation !!
-  console.log(wordToGuess);
-  console.log(wordToDisplay);
   if (wordToGuess.join("") == wordToDisplay.join("")) {
-    console.log("congratualtion!!");
     document.querySelector(".modal-wrapper").style.display = "flex";
     document.getElementById("message").innerText = "Congratulation";
     gameEnd = true;
@@ -100,7 +110,6 @@ document.getElementById("new-game").addEventListener("click", () => {
 // feature modal
 document.getElementById("yes").addEventListener("click", (e) => {
   document.querySelector(".modal-wrapper").style.display = "none";
-
   initGame();
   displayWord();
 });
