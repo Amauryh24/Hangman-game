@@ -23,6 +23,11 @@ body .content-header h1 {
   margin: auto;
 }
 
+body .content-header p {
+  width: 480px;
+  margin: auto;
+}
+
 body .content-game {
   width: 400px;
   margin: auto;
