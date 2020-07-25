@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,12 +17,12 @@
   <body onkeydown="pressLetter(event)">
     <div class="content-header">
       <h1>Welcome to the Handman Game</h1>
-      <button id="new-game">Nouvelle partie</button>
+      <button id="new-game">New game</button>
     </div>
     <div class="content-game">
       <h2 id="affichage"></h2>
       <label id="enter-label" for="enter"></label>
-      <p id="memory-guess-letter">Lettres :</p>
+      <p id="memory-guess-letter"></p>
     </div>
     <div class="alphabet-wrapper">
       <ul>
@@ -58,6 +58,7 @@
         <li id="letterZ" class="letter On" onclick="clickLetter('z')">z</li>
       </ul>
     </div>
+    <div class="modal-wrapper"></div>
 
     <script type="module" src="./assets/js/script.js"></script>
   </body>

@@ -5,12 +5,14 @@ let wordToDisplay = [];
 let memoryLetters = [];
 let wordToDisplayElement = document.getElementById("affichage");
 let memoryLettersElement = document.getElementById("memory-guess-letter");
+let gameEnd = true;
 
 window.initGame = () => {
+  gameEnd = false;
   wordToDisplay = [];
   memoryLetters = [];
   memoryLettersElement.style.display = "none";
-  memoryLettersElement.innerText = "Lettre:";
+  memoryLettersElement.innerText = "Letters: ";
 };
 
 window.getRandomWord = () => {
@@ -42,8 +44,12 @@ window.clickLetter = (lettre) => {
 };
 
 window.checkLetter = (event) => {
+  // check the status of game
+  if (gameEnd == true) {
+    return;
+  }
+
   let letter = event;
-  console.log(letter);
 
   // check only letter of alphabet
   let permLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -56,7 +62,7 @@ window.checkLetter = (event) => {
   else {
     memoryLetters.push(letter);
     memoryLettersElement.style.display = "block";
-    memoryLettersElement.innerText = "Lettre: " + memoryLetters.join(", ");
+    memoryLettersElement.innerText = "Letters: " + memoryLetters.join(", ");
   }
 
   // turn off the button alphabet
@@ -70,6 +76,13 @@ window.checkLetter = (event) => {
       wordToDisplay[i] = letter;
       wordToDisplayElement.innerText = wordToDisplay.join("");
     }
+  }
+  //congratulation !!
+  console.log(wordToGuess);
+  console.log(wordToDisplay);
+  if (wordToGuess.join("") == wordToDisplay.join("")) {
+    console.log("congratualtion!!");
+    gameEnd = true;
   }
 };
 
