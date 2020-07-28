@@ -3,20 +3,6 @@
   src: url(../fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf);
 }
 
-// input,
-// button {
-//   padding: 1em;
-//   border-radius: 5px;
-//   border: none;
-//   font-size: 16px;
-// }
-// button {
-//   box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.493);
-//   &:hover {
-//     cursor: pointer;
-//     background-color: #eab562;
-//   }
-// }
 body {
   text-align: center;
   font-size: 16px;
@@ -46,6 +32,19 @@ body {
       width: 480px;
       margin: auto;
     }
+    button {
+      font-size: 1em;
+      padding: 1em;
+      border-radius: 5px;
+      background-color: #fff7ce;
+      color: rgb(149, 56, 1);
+      border: none;
+      box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.479);
+      &:hover {
+        cursor: pointer;
+        background-color: #eab562;
+      }
+    }
   }
 
   .content-game {
@@ -63,7 +62,6 @@ body {
       border-radius: 5px;
       margin-top: 8px;
       border: 2px solid #cb650e;
-      display: none;
     }
 
     progress {
@@ -99,7 +97,7 @@ body {
       }
       .On {
         &:hover {
-          // background-color: #eab562;
+          background-color: #eab562;
           cursor: pointer;
         }
       }
@@ -122,6 +120,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    #message {
+      font-size: 2em;
+      line-height: 2em;
+    }
     button {
       width: 30%;
       margin: 1em;

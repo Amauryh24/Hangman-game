@@ -28,6 +28,22 @@ body .content-header p {
   margin: auto;
 }
 
+body .content-header button {
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  background-color: #fff7ce;
+  color: #953801;
+  border: none;
+  -webkit-box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.479);
+          box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.479);
+}
+
+body .content-header button:hover {
+  cursor: pointer;
+  background-color: #eab562;
+}
+
 body .content-game {
   width: 400px;
   margin: auto;
@@ -46,7 +62,6 @@ body .content-game #memory-guess-letter {
   border-radius: 5px;
   margin-top: 8px;
   border: 2px solid #cb650e;
-  display: none;
 }
 
 body .content-game progress {
@@ -91,6 +106,7 @@ body .alphabet-wrapper ul .letter {
 }
 
 body .alphabet-wrapper ul .On:hover {
+  background-color: #eab562;
   cursor: pointer;
 }
 
@@ -121,6 +137,11 @@ body .modal-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body .modal-wrapper #message {
+  font-size: 2em;
+  line-height: 2em;
 }
 
 body .modal-wrapper button {

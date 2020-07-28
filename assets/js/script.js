@@ -92,7 +92,7 @@ window.checkLetter = (event) => {
     if (essais === 0) {
       document.querySelector(".modal-wrapper").style.display = "flex";
       document.getElementById("message").innerText =
-        "Sorry, the word was : " + wordToGuess.join("");
+        "Perdu, le mot était : " + wordToGuess.join("");
       gameEnd = true;
     }
   }
@@ -100,7 +100,7 @@ window.checkLetter = (event) => {
   //congratulation !!
   if (wordToGuess.join("") == wordToDisplay.join("")) {
     document.querySelector(".modal-wrapper").style.display = "flex";
-    document.getElementById("message").innerText = "Congratulation";
+    document.getElementById("message").innerText = "Félicitation !";
     gameEnd = true;
   }
 };
