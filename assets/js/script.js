@@ -31,7 +31,6 @@ window.getRandomWord = () => {
 
 window.displayWord = () => {
   wordToGuess = getRandomWord().split("");
-  console.log(wordToGuess);
   for (let i = 0; i < wordToGuess.length; i++) {
     wordToDisplay[i] = " _ ";
     wordToDisplayElement.innerText = wordToDisplay.join("");
@@ -86,7 +85,6 @@ window.checkLetter = (event) => {
     }
   }
   if (wordToGuess.includes(letter) === false) {
-    console.log("raté");
     essais--;
     essaisElement.value = essais;
     if (essais === 0) {
