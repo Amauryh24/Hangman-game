@@ -31,6 +31,7 @@ body {
       display: none;
     }
     p:hover .infobulle {
+      min-width: 240px;
       max-width: 480px;
       padding: 2em;
       display: inline-block;
@@ -88,7 +89,6 @@ body {
     ul {
       display: flex;
       justify-content: center;
-      // flex-flow: row wrap;
       .letter {
         padding: 1em;
         margin: 0.4em;
@@ -116,6 +116,7 @@ body {
     }
   }
   .wrap-modal {
+    min-width: 240px;
     display: none;
     background-color: $secondColor;
     color: white;
@@ -165,6 +166,19 @@ body {
       }
       &:active {
         transform: scale(0.9);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  body {
+    .wrap-alphabet {
+      ul {
+        .letter {
+          padding: 0.5em;
+          margin: 0.2em;
+        }
       }
     }
   }

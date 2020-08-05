@@ -34,6 +34,7 @@ body .wrap-instructions .infobulle {
 }
 
 body .wrap-instructions p:hover .infobulle {
+  min-width: 240px;
   max-width: 480px;
   padding: 2em;
   display: inline-block;
@@ -140,6 +141,7 @@ body .wrap-alphabet ul .off {
 }
 
 body .wrap-modal {
+  min-width: 240px;
   display: none;
   background-color: #3b3b5d;
   color: white;
@@ -203,5 +205,12 @@ body .wrap-options button:hover {
 body .wrap-options button:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+@media all and (max-width: 500px) {
+  body .wrap-alphabet ul .letter {
+    padding: 0.5em;
+    margin: 0.2em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
