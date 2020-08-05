@@ -23,7 +23,7 @@ body .wrap-instructions .help {
   -webkit-transform: rotate(1deg);
           transform: rotate(1deg);
   position: absolute;
-  top: 13%;
+  top: 10%;
   left: 50%;
   -webkit-box-shadow: 3px 3px 10px #50ab89;
           box-shadow: 3px 3px 10px #50ab89;
@@ -47,26 +47,32 @@ body .wrap-instructions p:hover .infobulle {
 }
 
 body .wrap-game {
-  max-width: 400px;
-  margin: auto;
-}
-
-body .wrap-game .word {
-  padding: 1em;
   text-align: center;
 }
 
+body .wrap-game .word {
+  padding: 5em;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 body .wrap-game .word .letter {
-  display: inline-block;
+  text-transform: uppercase;
   margin: 0 0.5em;
   padding: 1em;
   border-bottom: 2px solid #50ab89;
+  width: 1em;
 }
 
 body .wrap-game .storage-letters {
-  width: 90%;
+  width: 50%;
   margin: auto;
-  padding: 1em;
+  padding: 0.5em 1em;
   border-radius: 50px;
   background-color: #3b3b5d;
 }
@@ -75,7 +81,7 @@ body .wrap-game progress {
   -webkit-appearance: initial;
      -moz-appearance: initial;
           appearance: initial;
-  width: 100%;
+  width: 50%;
   margin: 1em auto;
 }
 
@@ -127,7 +133,8 @@ body .wrap-alphabet ul .on:active {
 }
 
 body .wrap-alphabet ul .off {
-  background-color: #eab562;
+  background-color: #3b3b5d;
+  opacity: 0.3;
 }
 
 body .wrap-modal {

@@ -23,7 +23,7 @@ body {
       display: inline-block;
       transform: rotate(1deg);
       position: absolute;
-      top: 13%;
+      top: 10%;
       left: 50%;
       box-shadow: 3px 3px 10px $thirdColor;
     }
@@ -44,36 +44,31 @@ body {
   }
 
   .wrap-game {
-    max-width: 400px;
-    margin: auto;
-    // h2 {
-    //   padding: 1em;
-    //   font-size: 1.3em;
-    //   text-align: center;
-    //   height: 100px;
-    //   line-height: 100px;
-    // }
+    text-align: center;
     .word {
-      padding: 1em;
+      padding: 5em;
       text-align: center;
+      display: flex;
+      justify-content: center;
       .letter {
-        display: inline-block;
+        text-transform: uppercase;
         margin: 0 0.5em;
         padding: 1em;
         border-bottom: 2px solid $thirdColor;
+        width: 1em;
       }
     }
     .storage-letters {
-      width: 90%;
+      width: 50%;
       margin: auto;
-      padding: 1em;
+      padding: 0.5em 1em;
       border-radius: 50px;
       background-color: $secondColor;
     }
 
     progress {
       appearance: initial;
-      width: 100%;
+      width: 50%;
       margin: 1em auto;
     }
     ::-webkit-progress-value {
@@ -112,7 +107,8 @@ body {
         }
       }
       .off {
-        background-color: #eab562;
+        background-color: $secondColor;
+        opacity: 0.3;
       }
     }
   }

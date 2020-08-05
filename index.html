@@ -14,7 +14,7 @@
 
     <title>Hangman Game</title>
   </head>
-  <body onkeydown="pressLetter(event)">
+  <body onload="hangman.Initialise()" onkeydown="hangman.Pressletter(event)">
     <h1>Jeu du Pendu</h1>
     <section class="wrap-instructions">
       <p>
@@ -29,49 +29,95 @@
     </section>
 
     <section class="wrap-game">
-      <p class="word">
-        <span class="letter">l</span>
-        <span class="letter">o</span>
-        <span class="letter">v</span>
-        <span class="letter">e</span>
-        <span class="letter">:)</span>
-      </p>
-      <p class="storage-letters">Lettres : a, b , c</p>
+      <p class="word"></p>
+      <p class="storage-letters"></p>
       <progress id="progress" min="0" max="7" value="7"></progress>
     </section>
 
     <section class="wrap-alphabet">
       <ul>
-        <li id="letterA" class="letter on" onclick="clickLetter('a')">a</li>
-        <li id="letterB" class="letter on" onclick="clickLetter('b')">b</li>
-        <li id="letterC" class="letter on" onclick="clickLetter('c')">c</li>
-        <li id="letterD" class="letter on" onclick="clickLetter('d')">d</li>
-        <li id="letterE" class="letter on" onclick="clickLetter('e')">e</li>
-        <li id="letterF" class="letter on" onclick="clickLetter('f')">f</li>
-        <li id="letterG" class="letter on" onclick="clickLetter('g')">g</li>
-        <li id="letterH" class="letter on" onclick="clickLetter('h')">h</li>
-        <li id="letterI" class="letter on" onclick="clickLetter('i')">i</li>
+        <li id="letterA" class="letter on" onclick="hangman.Clickletter('a')">
+          a
+        </li>
+        <li id="letterB" class="letter on" onclick="hangman.Clickletter('b')">
+          b
+        </li>
+        <li id="letterC" class="letter on" onclick="hangman.Clickletter('c')">
+          c
+        </li>
+        <li id="letterD" class="letter on" onclick="hangman.Clickletter('d')">
+          d
+        </li>
+        <li id="letterE" class="letter on" onclick="hangman.Clickletter('e')">
+          e
+        </li>
+        <li id="letterF" class="letter on" onclick="hangman.Clickletter('f')">
+          f
+        </li>
+        <li id="letterG" class="letter on" onclick="hangman.Clickletter('g')">
+          g
+        </li>
+        <li id="letterH" class="letter on" onclick="hangman.Clickletter('h')">
+          h
+        </li>
+        <li id="letterI" class="letter on" onclick="hangman.Clickletter('i')">
+          i
+        </li>
       </ul>
       <ul>
-        <li id="letterJ" class="letter on" onclick="clickLetter('j')">j</li>
-        <li id="letterK" class="letter on" onclick="clickLetter('k')">k</li>
-        <li id="letterL" class="letter on" onclick="clickLetter('l')">l</li>
-        <li id="letterM" class="letter on" onclick="clickLetter('m')">m</li>
-        <li id="letterN" class="letter on" onclick="clickLetter('n')">n</li>
-        <li id="letterO" class="letter on" onclick="clickLetter('o')">o</li>
-        <li id="letterP" class="letter on" onclick="clickLetter('p')">p</li>
-        <li id="letterQ" class="letter on" onclick="clickLetter('q')">q</li>
+        <li id="letterJ" class="letter on" onclick="hangman.Clickletter('j')">
+          j
+        </li>
+        <li id="letterK" class="letter on" onclick="hangman.Clickletter('k')">
+          k
+        </li>
+        <li id="letterL" class="letter on" onclick="hangman.Clickletter('l')">
+          l
+        </li>
+        <li id="letterM" class="letter on" onclick="hangman.Clickletter('m')">
+          m
+        </li>
+        <li id="letterN" class="letter on" onclick="hangman.Clickletter('n')">
+          n
+        </li>
+        <li id="letterO" class="letter on" onclick="hangman.Clickletter('o')">
+          o
+        </li>
+        <li id="letterP" class="letter on" onclick="hangman.Clickletter('p')">
+          p
+        </li>
+        <li id="letterQ" class="letter on" onclick="hangman.Clickletter('q')">
+          q
+        </li>
       </ul>
       <ul>
-        <li id="letterR" class="letter on" onclick="clickLetter('r')">r</li>
-        <li id="letterS" class="letter on" onclick="clickLetter('s')">s</li>
-        <li id="letterT" class="letter on" onclick="clickLetter('t')">t</li>
-        <li id="letterU" class="letter on" onclick="clickLetter('u')">u</li>
-        <li id="letterV" class="letter on" onclick="clickLetter('v')">v</li>
-        <li id="letterW" class="letter on" onclick="clickLetter('w')">w</li>
-        <li id="letterX" class="letter on" onclick="clickLetter('x')">x</li>
-        <li id="letterY" class="letter on" onclick="clickLetter('y')">y</li>
-        <li id="letterZ" class="letter on" onclick="clickLetter('z')">z</li>
+        <li id="letterR" class="letter on" onclick="hangman.Clickletter('r')">
+          r
+        </li>
+        <li id="letterS" class="letter on" onclick="hangman.Clickletter('s')">
+          s
+        </li>
+        <li id="letterT" class="letter on" onclick="hangman.Clickletter('t')">
+          t
+        </li>
+        <li id="letterU" class="letter on" onclick="hangman.Clickletter('u')">
+          u
+        </li>
+        <li id="letterV" class="letter on" onclick="hangman.Clickletter('v')">
+          v
+        </li>
+        <li id="letterW" class="letter on" onclick="hangman.Clickletter('w')">
+          w
+        </li>
+        <li id="letterX" class="letter on" onclick="hangman.Clickletter('x')">
+          x
+        </li>
+        <li id="letterY" class="letter on" onclick="hangman.Clickletter('y')">
+          y
+        </li>
+        <li id="letterZ" class="letter on" onclick="hangman.Clickletter('z')">
+          z
+        </li>
       </ul>
     </section>
     <div class="wrap-modal">
@@ -83,6 +129,7 @@
     <section class="wrap-options">
       <button id="new-game">Nouvelle partie</button>
     </section>
-    <script type="module" src="./assets/js/hangman2.js"></script>
+    <script src="./assets/js/dictionnaire.js"></script>
+    <script src="./assets/js/hangman2.js"></script>
   </body>
 </html>
