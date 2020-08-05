@@ -1,174 +1,198 @@
-@font-face {
-  font-family: "BalsamiqSansRegular";
-  src: url(../fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf);
-}
-
 body {
-  text-align: center;
   font-size: 16px;
   line-height: 24px;
-  font-family: "BalsamiqSansRegular";
-  background: radial-gradient(circle at top center, #f3b12e, #e69924, #d9811a, #cc680f, #bf5005);
-  background-size: cover;
-  min-height: 100vh;
-  color: #953801;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: #29294a;
   position: relative;
+  color: white;
 }
 
-body .content-header h1 {
-  padding: 2%;
-  font-size: 3em;
+body h1 {
+  text-align: center;
+  padding: 1em;
+  font-size: 2em;
   line-height: 1.4em;
 }
 
-body .content-header p {
+body .wrap-instructions .help {
+  cursor: help;
+  padding: 0.5em;
+  background-color: #50ab89;
+  color: black;
+  display: inline-block;
+  -webkit-transform: rotate(1deg);
+          transform: rotate(1deg);
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  -webkit-box-shadow: 3px 3px 10px #50ab89;
+          box-shadow: 3px 3px 10px #50ab89;
+}
+
+body .wrap-instructions .infobulle {
+  display: none;
+}
+
+body .wrap-instructions p:hover .infobulle {
   max-width: 480px;
-  margin: auto;
+  padding: 2em;
+  display: inline-block;
+  background-color: #3b3b5d;
+  border: 2px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-body .content-header button {
-  font-size: 1em;
-  padding: 1em;
-  border-radius: 5px;
-  background-color: #fff7ce;
-  color: #953801;
-  border: none;
-  -webkit-box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.479);
-          box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.479);
-}
-
-body .content-header button:hover {
-  cursor: pointer;
-  background-color: #eab562;
-}
-
-body .content-game {
+body .wrap-game {
   max-width: 400px;
   margin: auto;
 }
 
-body .content-game h2 {
-  padding: 10% 5%;
-  font-size: 1.3em;
+body .wrap-game .word {
+  padding: 1em;
+  text-align: center;
 }
 
-body .content-game #memory-guess-letter {
+body .wrap-game .word .letter {
+  display: inline-block;
+  margin: 0 0.5em;
+  padding: 1em;
+  border-bottom: 2px solid #50ab89;
+}
+
+body .wrap-game .storage-letters {
   width: 90%;
   margin: auto;
   padding: 1em;
-  border-radius: 5px;
-  margin-top: 8px;
-  border: 2px solid #cb650e;
+  border-radius: 50px;
+  background-color: #3b3b5d;
 }
 
-body .content-game progress {
+body .wrap-game progress {
   -webkit-appearance: initial;
      -moz-appearance: initial;
           appearance: initial;
-  width: 90%;
-  margin: 1em 0;
+  width: 100%;
+  margin: 1em auto;
 }
 
-body .content-game ::-webkit-progress-value {
-  background-color: #953801;
-}
-
-body .content-game ::-webkit-progress-bar {
-  background-color: transparent;
-  border: 2px solid;
+body .wrap-game ::-webkit-progress-value {
+  background-color: #50ab89;
   border-radius: 15px;
 }
 
-body .content-image img {
-  -webkit-filter: invert(1);
-          filter: invert(1);
+body .wrap-game ::-webkit-progress-bar {
+  background-color: #3b3b5d;
+  border-radius: 15px;
 }
 
-body .alphabet-wrapper ul {
+body .wrap-alphabet {
+  width: 90%;
+  margin: auto;
+}
+
+body .wrap-alphabet ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  width: 90%;
-  margin: auto;
 }
 
-body .alphabet-wrapper ul .letter {
-  padding: 2%;
-  margin: 0.2em;
-  width: 2%;
-  background-color: #fff7ce;
+body .wrap-alphabet ul .letter {
+  padding: 1em;
+  margin: 0.4em;
+  width: 5em;
+  background-color: #3b3b5d;
   text-transform: uppercase;
   border-radius: 5%;
+  color: white;
+  text-align: center;
 }
 
-body .alphabet-wrapper ul .On:hover {
-  background-color: #eab562;
+body .wrap-alphabet ul .on:hover {
+  background-color: #50ab89;
   cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
-body .alphabet-wrapper ul .Off {
+body .wrap-alphabet ul .on:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .wrap-alphabet ul .off {
   background-color: #eab562;
 }
 
-body .modal-wrapper {
-  background-color: #e79c25;
+body .wrap-modal {
+  display: none;
+  background-color: #3b3b5d;
+  color: white;
+  border: 2px solid white;
   -webkit-box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.514);
           box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.514);
-  width: 80%;
-  height: 80vh;
-  margin: auto;
+  padding: 1em 2em;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  text-align: center;
 }
 
-body .modal-wrapper #message {
+body .wrap-modal #message {
   font-size: 2em;
   line-height: 2em;
 }
 
-body .modal-wrapper button {
+body .wrap-modal button {
   width: 30%;
   margin: 1em;
   padding: 1em;
+  font-size: 1em;
   background-color: transparent;
   border: 2px solid white;
-}
-
-body .modal-wrapper button:hover {
-  background-color: white;
+  color: white;
   cursor: pointer;
 }
 
-@media all and (max-width: 500px) {
-  body .alphabet-wrapper ul {
-    width: 100%;
-  }
-  body .alphabet-wrapper ul .letter {
-    padding: 3%;
-    width: 3%;
-    -webkit-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-  }
+body .wrap-modal button:hover {
+  background-color: white;
+  color: black;
+}
+
+body .wrap-options {
+  text-align: center;
+  padding: 1em;
+}
+
+body .wrap-options button {
+  display: inline-block;
+  padding: 1em;
+  background-color: transparent;
+  border: 2px solid #3b3b5d;
+  border-radius: 30px;
+  font-size: 1em;
+  color: white;
+  -webkit-box-shadow: 1px 1px 5px #2224237a;
+          box-shadow: 1px 1px 5px #2224237a;
+}
+
+body .wrap-options button:hover {
+  cursor: pointer;
+  background-color: #3b3b5d;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body .wrap-options button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 /*# sourceMappingURL=style.css.map */

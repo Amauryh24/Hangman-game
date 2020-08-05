@@ -1,125 +1,133 @@
-@font-face {
-  font-family: "BalsamiqSansRegular";
-  src: url(../fonts/Balsamiq_Sans/BalsamiqSans-Regular.ttf);
-}
-
+$firstColor: #29294a;
+$secondColor: #3b3b5d;
+$thirdColor: #50ab89;
 body {
-  text-align: center;
   font-size: 16px;
   line-height: 24px;
-  font-family: "BalsamiqSansRegular";
-  background: radial-gradient(
-    circle at top center,
-    rgb(243, 177, 46),
-    rgb(230, 153, 36),
-    rgb(217, 129, 26),
-    rgb(204, 104, 15),
-    rgb(191, 80, 5)
-  );
-  background-size: cover;
-  min-height: 100vh;
-  color: rgb(149, 56, 1);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: $firstColor;
   position: relative;
-  .content-header {
-    h1 {
-      padding: 2%;
-      font-size: 3em;
-      line-height: 1.4em;
+  color: white;
+  h1 {
+    text-align: center;
+    padding: 1em;
+    font-size: 2em;
+    line-height: 1.4em;
+  }
+  .wrap-instructions {
+    .help {
+      cursor: help;
+      padding: 0.5em;
+      background-color: $thirdColor;
+      color: black;
+      display: inline-block;
+      transform: rotate(1deg);
+      position: absolute;
+      top: 13%;
+      left: 50%;
+      box-shadow: 3px 3px 10px $thirdColor;
     }
-    p {
+    .infobulle {
+      display: none;
+    }
+    p:hover .infobulle {
       max-width: 480px;
-      margin: auto;
-    }
-    button {
-      font-size: 1em;
-      padding: 1em;
-      border-radius: 5px;
-      background-color: #fff7ce;
-      color: rgb(149, 56, 1);
-      border: none;
-      box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.479);
-      &:hover {
-        cursor: pointer;
-        background-color: #eab562;
-      }
+      padding: 2em;
+      display: inline-block;
+      background-color: $secondColor;
+      border: 2px solid white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
-  .content-game {
+  .wrap-game {
     max-width: 400px;
     margin: auto;
-    h2 {
-      padding: 10% 5%;
-      font-size: 1.3em;
+    // h2 {
+    //   padding: 1em;
+    //   font-size: 1.3em;
+    //   text-align: center;
+    //   height: 100px;
+    //   line-height: 100px;
+    // }
+    .word {
+      padding: 1em;
+      text-align: center;
+      .letter {
+        display: inline-block;
+        margin: 0 0.5em;
+        padding: 1em;
+        border-bottom: 2px solid $thirdColor;
+      }
     }
-    #memory-guess-letter {
+    .storage-letters {
       width: 90%;
       margin: auto;
       padding: 1em;
-      border-radius: 5px;
-      margin-top: 8px;
-      border: 2px solid #cb650e;
+      border-radius: 50px;
+      background-color: $secondColor;
     }
 
     progress {
       appearance: initial;
-      width: 90%;
-      margin: 1em 0;
+      width: 100%;
+      margin: 1em auto;
     }
     ::-webkit-progress-value {
-      background-color: #953801;
+      background-color: $thirdColor;
+      border-radius: 15px;
     }
     ::-webkit-progress-bar {
-      background-color: transparent;
-      border: 2px solid;
+      background-color: $secondColor;
       border-radius: 15px;
     }
   }
-  .content-image {
-    img {
-      filter: invert(1);
-    }
-  }
-  .alphabet-wrapper {
+  .wrap-alphabet {
+    width: 90%;
+    margin: auto;
     ul {
       display: flex;
       justify-content: center;
-      flex-flow: row wrap;
-      width: 90%;
-      margin: auto;
       .letter {
-        padding: 2%;
-        margin: 0.2em;
-        width: 2%;
-        background-color: #fff7ce;
+        padding: 1em;
+        margin: 0.4em;
+        width: 5em;
+        background-color: $secondColor;
         text-transform: uppercase;
         border-radius: 5%;
+        color: white;
+        text-align: center;
       }
-      .On {
+      .on {
         &:hover {
-          background-color: #eab562;
+          background-color: $thirdColor;
           cursor: pointer;
+          transform: scale(1.1);
+        }
+        &:active {
+          transform: scale(0.95);
         }
       }
-      .Off {
+      .off {
         background-color: #eab562;
       }
     }
   }
-  .modal-wrapper {
-    background-color: #e79c25;
+  .wrap-modal {
+    display: none;
+    background-color: $secondColor;
+    color: white;
+    border: 2px solid white;
     box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.514);
-    width: 80%;
-    height: 80vh;
-    margin: auto;
+    padding: 1em 2em;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transform: translate(-50%, 50%);
+    text-align: center;
     #message {
       font-size: 2em;
       line-height: 2em;
@@ -128,25 +136,37 @@ body {
       width: 30%;
       margin: 1em;
       padding: 1em;
+      font-size: 1em;
       background-color: transparent;
       border: 2px solid white;
+      color: white;
+      cursor: pointer;
       &:hover {
         background-color: white;
-        cursor: pointer;
+        color: black;
       }
     }
   }
-}
-@media all and (max-width: 500px) {
-  body {
-    .alphabet-wrapper {
-      ul {
-        width: 100%;
-        .letter {
-          padding: 3%;
-          width: 3%;
-          transition: all 0.2s ease-out;
-        }
+  .wrap-options {
+    text-align: center;
+    padding: 1em;
+    button {
+      display: inline-block;
+      padding: 1em;
+      background-color: transparent;
+      border: 2px solid $secondColor;
+      border-radius: 30px;
+      font-size: 1em;
+      // text-transform: uppercase;
+      color: white;
+      box-shadow: 1px 1px 5px #2224237a;
+      &:hover {
+        cursor: pointer;
+        background-color: $secondColor;
+        transform: scale(1.1);
+      }
+      &:active {
+        transform: scale(0.9);
       }
     }
   }

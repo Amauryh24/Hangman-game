@@ -15,63 +15,74 @@
     <title>Hangman Game</title>
   </head>
   <body onkeydown="pressLetter(event)">
-    <div class="content-header">
-      <h1>Jeu du Pendu</h1>
+    <h1>Jeu du Pendu</h1>
+    <section class="wrap-instructions">
       <p>
-        Bienvenue à toi, cher internaute, Pour jouer il te suffit de presser une
-        lettre sur ton clavier ou bien click sur le clavier virtuel!
+        <span class="help">Voir instructions</span>
+        <span class="infobulle"
+          >Trouver le mot en devinant quelles sont les lettres qui le composent,
+          vous pouvez presser une touche du clavier ou bien cliquer sur une
+          touche à l'aide de la souris pour proposer une lettre, vous avez 7
+          essais maximum!</span
+        >
       </p>
-      <button id="new-game">Nouvelle partie</button>
-    </div>
-    <div class="content-game">
-      <h2 id="affichage"></h2>
-      <label id="enter-label" for="enter"></label>
-      <p id="memory-guess-letter"></p>
+    </section>
 
+    <section class="wrap-game">
+      <p class="word">
+        <span class="letter">l</span>
+        <span class="letter">o</span>
+        <span class="letter">v</span>
+        <span class="letter">e</span>
+        <span class="letter">:)</span>
+      </p>
+      <p class="storage-letters">Lettres : a, b , c</p>
       <progress id="progress" min="0" max="7" value="7"></progress>
-    </div>
+    </section>
 
-    <div class="alphabet-wrapper">
+    <section class="wrap-alphabet">
       <ul>
-        <li id="letterA" class="letter On" onclick="clickLetter('a')">a</li>
-        <li id="letterB" class="letter On" onclick="clickLetter('b')">b</li>
-        <li id="letterC" class="letter On" onclick="clickLetter('c')">c</li>
-        <li id="letterD" class="letter On" onclick="clickLetter('d')">d</li>
-        <li id="letterE" class="letter On" onclick="clickLetter('e')">e</li>
-        <li id="letterF" class="letter On" onclick="clickLetter('f')">f</li>
-        <li id="letterG" class="letter On" onclick="clickLetter('g')">g</li>
-        <li id="letterH" class="letter On" onclick="clickLetter('h')">h</li>
-        <li id="letterI" class="letter On" onclick="clickLetter('i')">i</li>
+        <li id="letterA" class="letter on" onclick="clickLetter('a')">a</li>
+        <li id="letterB" class="letter on" onclick="clickLetter('b')">b</li>
+        <li id="letterC" class="letter on" onclick="clickLetter('c')">c</li>
+        <li id="letterD" class="letter on" onclick="clickLetter('d')">d</li>
+        <li id="letterE" class="letter on" onclick="clickLetter('e')">e</li>
+        <li id="letterF" class="letter on" onclick="clickLetter('f')">f</li>
+        <li id="letterG" class="letter on" onclick="clickLetter('g')">g</li>
+        <li id="letterH" class="letter on" onclick="clickLetter('h')">h</li>
+        <li id="letterI" class="letter on" onclick="clickLetter('i')">i</li>
       </ul>
       <ul>
-        <li id="letterJ" class="letter On" onclick="clickLetter('j')">j</li>
-        <li id="letterK" class="letter On" onclick="clickLetter('k')">k</li>
-        <li id="letterL" class="letter On" onclick="clickLetter('l')">l</li>
-        <li id="letterM" class="letter On" onclick="clickLetter('m')">m</li>
-        <li id="letterN" class="letter On" onclick="clickLetter('n')">n</li>
-        <li id="letterO" class="letter On" onclick="clickLetter('o')">o</li>
-        <li id="letterP" class="letter On" onclick="clickLetter('p')">p</li>
-        <li id="letterQ" class="letter On" onclick="clickLetter('q')">q</li>
+        <li id="letterJ" class="letter on" onclick="clickLetter('j')">j</li>
+        <li id="letterK" class="letter on" onclick="clickLetter('k')">k</li>
+        <li id="letterL" class="letter on" onclick="clickLetter('l')">l</li>
+        <li id="letterM" class="letter on" onclick="clickLetter('m')">m</li>
+        <li id="letterN" class="letter on" onclick="clickLetter('n')">n</li>
+        <li id="letterO" class="letter on" onclick="clickLetter('o')">o</li>
+        <li id="letterP" class="letter on" onclick="clickLetter('p')">p</li>
+        <li id="letterQ" class="letter on" onclick="clickLetter('q')">q</li>
       </ul>
       <ul>
-        <li id="letterR" class="letter On" onclick="clickLetter('r')">r</li>
-        <li id="letterS" class="letter On" onclick="clickLetter('s')">s</li>
-        <li id="letterT" class="letter On" onclick="clickLetter('t')">t</li>
-        <li id="letterU" class="letter On" onclick="clickLetter('u')">u</li>
-        <li id="letterV" class="letter On" onclick="clickLetter('v')">v</li>
-        <li id="letterW" class="letter On" onclick="clickLetter('w')">w</li>
-        <li id="letterX" class="letter On" onclick="clickLetter('x')">x</li>
-        <li id="letterY" class="letter On" onclick="clickLetter('y')">y</li>
-        <li id="letterZ" class="letter On" onclick="clickLetter('z')">z</li>
+        <li id="letterR" class="letter on" onclick="clickLetter('r')">r</li>
+        <li id="letterS" class="letter on" onclick="clickLetter('s')">s</li>
+        <li id="letterT" class="letter on" onclick="clickLetter('t')">t</li>
+        <li id="letterU" class="letter on" onclick="clickLetter('u')">u</li>
+        <li id="letterV" class="letter on" onclick="clickLetter('v')">v</li>
+        <li id="letterW" class="letter on" onclick="clickLetter('w')">w</li>
+        <li id="letterX" class="letter on" onclick="clickLetter('x')">x</li>
+        <li id="letterY" class="letter on" onclick="clickLetter('y')">y</li>
+        <li id="letterZ" class="letter on" onclick="clickLetter('z')">z</li>
       </ul>
-    </div>
-    <div class="modal-wrapper">
-      <p id="message">Message</p>
+    </section>
+    <div class="wrap-modal">
+      <h2 id="message">Message</h2>
       <p>Veux-tu rejouer ?</p>
       <button id="yes">oui</button>
       <button id="no">non</button>
     </div>
-
-    <script type="module" src="./assets/js/script.js"></script>
+    <section class="wrap-options">
+      <button id="new-game">Nouvelle partie</button>
+    </section>
+    <script type="module" src="./assets/js/hangman2.js"></script>
   </body>
 </html>
