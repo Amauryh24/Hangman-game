@@ -31,7 +31,7 @@
     <section class="wrap-game">
       <p class="word"></p>
       <p class="storage-letters"></p>
-      <progress id="progress" min="0" max="7" value="7"></progress>
+      <progress id="progress" min="0" max="7"></progress>
     </section>
 
     <section class="wrap-alphabet">
@@ -127,9 +127,11 @@
       <button id="no">non</button>
     </div>
     <section class="wrap-options">
-      <button id="new-game">Nouvelle partie</button>
+      <button id="new-game" onclick="hangman.Initialise()">
+        Nouvelle partie
+      </button>
     </section>
     <script src="./assets/js/dictionnaire.js"></script>
-    <script src="./assets/js/hangman2.js"></script>
+    <script src="./assets/js/hangman.js"></script>
   </body>
 </html>

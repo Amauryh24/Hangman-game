@@ -1,120 +1,114 @@
-import { dictionnaire } from "./dictionnaire.js";
+const hangman = {
+  word: [],
+  guess: [],
+  letters: "abcdefghijklmnopqrstuvwxyz",
+  storageLetters: [],
+  essais: null,
+  elDom: {
+    word: document.querySelector("p.word"),
+    letters: document.querySelectorAll("li.letter"),
+    storageLetters: document.querySelector(".storage-letters"),
+    progress: document.getElementById("progress"),
+  },
 
-let wordToGuess;
-let wordToDisplay = [];
-let memoryLetters = [];
-let wordToDisplayElement = document.getElementById("affichage");
-let memoryLettersElement = document.getElementById("memory-guess-letter");
-let gameEnd = true;
-let essais = 7;
-let essaisElement = document.getElementById("progress");
+  Initialise: function () {
+    this.Stargame();
+  },
 
-window.initGame = () => {
-  let elements = document.querySelectorAll(".letter");
-  elements.forEach((element) => {
-    element.setAttribute("class", "letter On");
-  });
-  gameEnd = false;
-  essais = 7;
-  essaisElement.value = 7;
-  wordToDisplay = [];
-  memoryLetters = [];
-  memoryLettersElement.style.display = "none";
-  memoryLettersElement.innerText = "Letters: ";
-};
-
-window.getRandomWord = () => {
-  let index = Math.floor(Math.random() * dictionnaire.length);
-  let word = dictionnaire[index];
-  return word;
-};
-
-window.displayWord = () => {
-  wordToGuess = getRandomWord().split("");
-  for (let i = 0; i < wordToGuess.length; i++) {
-    wordToDisplay[i] = " _ ";
-    wordToDisplayElement.innerText = wordToDisplay.join("");
-  }
-};
-
-window.addEventListener("load", () => {
-  initGame();
-  displayWord();
-});
-
-window.pressLetter = (lettre) => {
-  checkLetter(lettre.key);
-};
-
-window.clickLetter = (lettre) => {
-  checkLetter(lettre);
-};
-
-window.checkLetter = (event) => {
-  // check the status of game
-  if (gameEnd == true) {
-    return;
-  }
-
-  let letter = event;
-
-  // check only letter of alphabet
-  let permLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  if (permLetters.indexOf(letter.toUpperCase()) == -1) {
-    return;
-  }
-
-  // Garbage only single letter
-  if (memoryLetters.includes(letter) === true) return;
-  else {
-    memoryLetters.push(letter);
-    memoryLettersElement.style.display = "block";
-    memoryLettersElement.innerText = "Letters: " + memoryLetters.join(", ");
-  }
-
-  // turn off the button alphabet
-  let element = document.getElementById("letter" + letter.toUpperCase());
-  if (element.classList.contains("Off") == true) return;
-  element.setAttribute("class", "letter Off");
-
-  // put letter in array if available
-  for (let i = 0; i < wordToGuess.length; i++) {
-    if (letter === wordToGuess[i]) {
-      wordToDisplay[i] = letter;
-      wordToDisplayElement.innerText = wordToDisplay.join("");
+  Stargame: function () {
+    for (let i = 0; i < this.elDom.letters.length; i++) {
+      this.elDom.letters[i].className = "letter on";
     }
-  }
-  if (wordToGuess.includes(letter) === false) {
-    essais--;
-    essaisElement.value = essais;
-    if (essais === 0) {
-      document.querySelector(".modal-wrapper").style.display = "flex";
-      document.getElementById("message").innerText =
-        "Perdu, le mot était : " + wordToGuess.join("");
-      gameEnd = true;
+    this.word = [];
+    this.guess = [];
+    this.storageLetters = [];
+    this.elDom.word.innerHTML = "";
+    this.elDom.storageLetters.innerHTML = "";
+    this.essais = 7;
+    this.elDom.progress.value = this.essais;
+    this.Getword();
+    this.Displayword();
+  },
+
+  Getword: function () {
+    let words = Dictionary();
+    let index = parseInt(Math.random() * words.length);
+    this.word = words[index].split("");
+  },
+  Displayword: function () {
+    this.elDom.word.innerHTML = "";
+    for (let i = 0; i < this.word.length; i++) {
+      let el = document.createElement("span");
+      el.setAttribute("class", "letter");
+      el.innerText = "";
+      this.guess[i] = " ";
+      this.elDom.word.appendChild(el);
     }
-  }
+  },
+  Pressletter: function (e) {
+    // press only alphabet key
+    if (this.letters.indexOf(e.key.toLowerCase()) === -1) return;
+    this.CheckLetter(e.key.toLowerCase());
+    let el = document.getElementById("letter" + e.key.toUpperCase());
+    el.className = "letter off";
+  },
 
-  //congratulation !!
-  if (wordToGuess.join("") == wordToDisplay.join("")) {
-    document.querySelector(".modal-wrapper").style.display = "flex";
-    document.getElementById("message").innerText = "Félicitation !";
-    gameEnd = true;
-  }
+  Clickletter: function (letter) {
+    this.CheckLetter(letter);
+    let el = document.getElementById("letter" + letter.toUpperCase());
+    el.className = "letter off";
+  },
+
+  CheckLetter: function (letter) {
+    if (this.storageLetters.indexOf(letter) !== -1) return;
+    this.Storeletter(letter);
+
+    let el = document.querySelectorAll("span.letter");
+    for (let i = 0; i < this.word.length; i++) {
+      if (letter.toLowerCase() === this.word[i]) {
+        el[i].innerText = letter;
+        this.guess[i] = letter;
+      }
+    }
+    if (this.word.indexOf(letter) === -1) {
+      this.essais--;
+      this.elDom.progress.value = this.essais;
+    }
+    if (this.essais === 0) this.Endgame("lost");
+    if (this.word.join("") === this.guess.join("")) this.Endgame("win");
+  },
+
+  Storeletter: function (letter) {
+    this.elDom.storageLetters.innerText += ` ${letter}, `;
+    this.storageLetters.push(letter);
+  },
+
+  Endgame: function (status) {
+    this.Displayanswer();
+    // remove Event
+    for (let i = 0; i < this.elDom.letters.length; i++) {
+      this.elDom.letters[i].className = "letter off";
+    }
+    this.storageLetters = this.letters.split("");
+
+    // display modal and select option
+    let modal = document.querySelector(".wrap-modal");
+    modal.style.display = "initial";
+    let message = document.getElementById("message");
+    if (status === "win") message.innerText = "Bien joué !";
+    else message.innerText = "Raté !";
+    document.getElementById("yes").addEventListener("click", () => {
+      modal.style.display = "none";
+      this.Stargame();
+    });
+    document.getElementById("no").addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  },
+  Displayanswer: function () {
+    let letters = document.querySelectorAll("span.letter");
+    for (let i = 0; i < letters.length; i++) {
+      letters[i].innerText = this.word[i];
+    }
+  },
 };
-
-document.getElementById("new-game").addEventListener("click", () => {
-  initGame();
-  displayWord();
-});
-
-// feature modal
-document.getElementById("yes").addEventListener("click", (e) => {
-  document.querySelector(".modal-wrapper").style.display = "none";
-  initGame();
-  displayWord();
-});
-
-document.getElementById("no").addEventListener("click", (e) => {
-  document.querySelector(".modal-wrapper").style.display = "none";
-});

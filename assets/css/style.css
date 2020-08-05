@@ -72,9 +72,11 @@ body .wrap-game .word .letter {
 body .wrap-game .storage-letters {
   width: 50%;
   margin: auto;
-  padding: 0.5em 1em;
+  padding: 1em;
   border-radius: 50px;
   background-color: #3b3b5d;
+  line-height: 1em;
+  height: 1em;
 }
 
 body .wrap-game progress {
@@ -148,8 +150,8 @@ body .wrap-modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
   text-align: center;
 }
 
@@ -159,7 +161,7 @@ body .wrap-modal #message {
 }
 
 body .wrap-modal button {
-  width: 30%;
+  width: 50%;
   margin: 1em;
   padding: 1em;
   font-size: 1em;
@@ -180,12 +182,12 @@ body .wrap-options {
 }
 
 body .wrap-options button {
-  display: inline-block;
   padding: 1em;
   background-color: transparent;
   border: 2px solid #3b3b5d;
   border-radius: 30px;
   font-size: 1em;
+  text-align: center;
   color: white;
   -webkit-box-shadow: 1px 1px 5px #2224237a;
           box-shadow: 1px 1px 5px #2224237a;
